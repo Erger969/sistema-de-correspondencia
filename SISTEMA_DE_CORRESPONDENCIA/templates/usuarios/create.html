@@ -1,0 +1,12 @@
+{%extends 'base.html' %}
+
+{% block title %} USUARIO | CREATE {% endblock %}
+{% block content %}
+
+<h1>registro Usuario</h1>
+
+<form action="{{url_form ('usuario.create')}}" method="POST"></form>
+    <div class="mb-3">
+        <label for="" class="form-label">Usuario</label>
+
+    </div>

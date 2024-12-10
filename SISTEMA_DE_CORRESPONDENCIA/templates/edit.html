@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Editar Registro - Mi Proyecto Flask{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Editar Registro de Correspondencia</h1>
+    <form method="POST">
+        <div class="mb-3">
+            <label for="asunto" class="form-label">Asunto</label>
+            <input type="text" class="form-control" id="asunto" name="asunto" value="{{ registro.asunto }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="destinatario" class="form-label">Destinatario</label>
+            <input type="email" class="form-control" id="destinatario" name="destinatario" value="{{ registro.destinatario }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="fecha" class="form-label">Fecha</label>
+            <input type="date" class="form-control" id="fecha" name="fecha" value="{{ registro.fecha }}" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+        <a href="/admin/dashboard" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}

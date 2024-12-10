@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title  %} USUARIO | EDIT {% endblock %}
+
+{% block content %}
+
+<h1>EDITAR USUARIO</h1>
+
+<form action="{{URL_FOR('usuario.edit')}}" method="POST">
+    <div class="mb-3">
+    <label for="" class="form-label">NOMBRE</label>
+    <input type="text" class="form-control" name="nombre" value="{{ usuario.nombre}}" required>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label"><u>Correo Electronico</u></label>
+        <input type="text" class="form-control" name="username" value="{{ usuario.username}}" required>
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label"><u>Password</u></label>
+            <input type="password" class="form-control" name="Password">
+            </div>
+</form>

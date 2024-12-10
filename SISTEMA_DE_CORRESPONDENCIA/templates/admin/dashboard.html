@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio - Mi Proyecto Flask{% endblock %}
+
+{% block content %}
+
+<!-- Tabla de registros de correspondencia -->
+<h2 class="mt-4">Lista de Usuarios</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Bucle para mostrar los registros dinámicamente -->
+        {% for item in usuarios %}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.nombre }}</td>
+            <td>{{ item.username }}</td>
+            <td>{{ item.password }}</td>
+            <td>
+                <a href="{{ url_for('usuario_edit', id=item.id) }}" class="btn btn-warning btn-sm">Editar</a>
+                <a href="{{ url_for('usuario_delete', id=item.id) }}" class="btn btn-danger btn-sm">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
